@@ -1,0 +1,66 @@
+[
+    {
+        "products": [
+            [
+                {
+                    "id": "9",
+                    "name": "Chocolate",
+                    "price": 90.0
+                },
+                2
+            ]
+        ],
+        "total": 180.0,
+        "paid": 180.0,
+        "change": 0.0,
+        "timestamp": "2024-06-22T17:23:37.271186"
+    },
+    {
+        "products": [
+            [
+                {
+                    "id": "13",
+                    "name": "Bread",
+                    "price": 130.0
+                },
+                2
+            ],
+            [
+                {
+                    "id": "10",
+                    "name": "Candy",
+                    "price": 100.0
+                },
+                2
+            ]
+        ],
+        "total": 460.0,
+        "paid": 500.0,
+        "change": 40.0,
+        "timestamp": "2024-06-22T17:23:48.386055"
+    },
+    {
+        "products": [
+            [
+                {
+                    "id": "9",
+                    "name": "Chocolate",
+                    "price": 90.0
+                },
+                1
+            ],
+            [
+                {
+                    "id": "8",
+                    "name": "Juice",
+                    "price": 80.0
+                },
+                3
+            ]
+        ],
+        "total": 330.0,
+        "paid": 988.0,
+        "change": 658.0,
+        "timestamp": "2024-06-22T17:30:39.023481"
+    }
+]

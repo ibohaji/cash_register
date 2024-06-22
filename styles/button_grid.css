@@ -1,0 +1,16 @@
+QPushButton {
+    background-color: #d3d3d3; /* Unified Color - Green */
+    color: #000000;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+QPushButton:hover {
+    background-color: #c0c0c0; /* Slightly darker green for hover effect */
+    opacity: 0.9;
+}
