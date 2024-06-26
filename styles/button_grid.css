@@ -1,16 +1,47 @@
+/* General button styling */
 QPushButton {
-    background-color: #d3d3d3; /* Unified Color - Green */
-    color: #000000;
-    padding: 10px;
+    padding: 12px;
     font-size: 16px;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    border-radius: 8px;
     margin: 5px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: #FFF3E0; /* Default background for product buttons */
+    color: #333;
 }
 
 QPushButton:hover {
-    background-color: #c0c0c0; /* Slightly darker green for hover effect */
-    opacity: 0.9;
+    background-color: #FFE0B2;
+}
+
+/* Category buttons */
+#category-button {
+    background-color: #E8F5E9; /* Very Light Baby Green */
+    color: #333;
+}
+
+#category-button:hover {
+    background-color: #C8E6C9;
+}
+
+/* Product buttons */
+#product-button {
+    background-color: #FFF3E0; /* Light Orange */
+    color: #333;
+}
+
+#product-button:hover {
+    background-color: #FFE0B2;
+}
+
+/* Navigation buttons */
+#nav-button {
+    background-color: #E3F2FD; /* Very Light Baby Blue */
+    color: #333;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+#nav-button:hover {
+    background-color: #B3E5FC;
 }

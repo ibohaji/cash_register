@@ -1,22 +1,21 @@
 QWidget#cart-container {
     background-color: #fff;
-    border: 1px solid #ccc; /* Add border to the whole cart component */
+    border: 1px solid #ccc; 
     border-radius: 10px;
     padding: 15px;
 }
 
 QPushButton {
-    background-color: #d3d3d3;
+    background-color: #68d388;
     color: #333;
-    padding: 10px 20px;
+    padding: 10px 5px;
     font-size: 16px;
-    border: none; /* Remove border from buttons */
-    border-radius: 5px;
-    cursor: pointer;
+    border: none; 
+    border-radius: 4px;
 }
 
 QPushButton:hover {
-    background-color: #c0c0c0;
+    background-color: #51a86b;
 }
 
 QLabel {
@@ -27,7 +26,7 @@ QLabel {
 }
 
 QListWidget {
-    border: none; /* Remove border from list */
+    border: none; 
 }
 
 QListWidget::item {

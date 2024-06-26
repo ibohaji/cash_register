@@ -1,6 +1,6 @@
 import uuid 
-from typing import Optional 
-from dataclasses import Field,dataclass
+from typing import Optional,List,Tuple,Dict 
+from dataclasses import field,dataclass
 from Model.database import MongoDB
 
 
@@ -10,7 +10,21 @@ class Product:
     name:str 
     price:float 
 
+@dataclass 
+class Category: 
+    name:str 
+    products: List[Product] = field(default_factory = list)
+
+@dataclass 
+class Catalogue: 
+    categories: Dict[str,Category] = field(default_factory=dict)
+
+
 class ProductRepository:
+    def __init__(self) -> None:
+        self.storage = Catalogue()
+        return 
+    """ 
     def __init__(self)  -> None:
         self.db = MongoDB() 
         try:
@@ -19,15 +33,14 @@ class ProductRepository:
         except Exception as err:
             print("there is an errrrrrrrrrrrror")
         self.menu_items = self.load_meanu()
+""" 
 
-    def create_product(self,product:Product,qty:int): 
-        product_data = {
-            "id": product.id,
-            "name": product.name,
-            "price": product.price,
-            "quantity": qty
-        }
-        self.collection.insert_one(product_data)
+
+    def create_product(self,product:Product,qty:int,category:str): 
+        if category not in self.storage.categories:
+            self.storage.categories[category] = Category(name=category)
+        self.storage.categories[category].products.append(product)
+        return product
 
 
     def load_meanu(self):

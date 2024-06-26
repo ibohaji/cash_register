@@ -20,14 +20,14 @@ class CartView(QWidget):
         self.cart_container.setStyleSheet(open("styles/cart_view.css").read())
         self.cart_container.setFixedHeight(500)
         cart_layout = QVBoxLayout(self.cart_container)
-        cart_layout.setSpacing(10)
+        cart_layout.setSpacing(0)  # Set spacing to 0
 
         self.cart_list = QListWidget()
         self.cart_list.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
         cart_layout.addWidget(self.cart_list)
 
-        self.total_price_label = QLabel("Total Price: $0.00")
-        self.total_price_label.setAlignment(Qt.AlignRight)
+        self.total_price_label = QLabel("Total: 0.00")
+        self.total_price_label.setAlignment(Qt.AlignLeft)
         cart_layout.addWidget(self.total_price_label)
 
         self.checkout_button = QPushButton("Checkout")
@@ -49,22 +49,22 @@ class CartView(QWidget):
         self.cart_list.clear()
         for product, quantity in self.controller.current_cart().basket:
             total = product.price * quantity
-            cart_item_text = f"{product.name} (x{quantity}): ${total:.2f}"
+            cart_item_text = f"{quantity}x {product.name} : {total:.2f}"
             item_widget = QWidget()
             item_layout = QHBoxLayout(item_widget)
-            item_layout.setContentsMargins(5, 5, 5, 5)
+            item_layout.setContentsMargins(1, 1, 1, 1)
             item_label = QLabel(cart_item_text)
-            item_label.setFixedHeight(40)
+            item_label.setFixedHeight(25)
             delete_button = QPushButton("Delete")
-            delete_button.setFixedSize(60, 30)
+            delete_button.setFixedSize(40, 15)
             delete_button.setStyleSheet("""
                 QPushButton {
                     background-color: #ff4c4c;
                     color: #fff;
-                    padding: 5px;
-                    font-size: 14px;
+                    padding: 3px;
+                    font-size: 12px;
                     border: none; /* Remove border */
-                    border-radius: 3px;
+                    border-radius: 2px;
                     cursor: pointer;
                 }
                 QPushButton:hover {
@@ -81,7 +81,16 @@ class CartView(QWidget):
 
     def update_total_price(self):
         total_price = self.controller.get_total()
-        self.total_price_label.setText(f"Total Price: ${total_price:.2f}")
+        self.total_price_label.setStyleSheet("""
+            QLabel {
+                background-color: #E5F6DF;
+                font-size: 25px;
+                font-weight: bold;
+                padding: 10px;
+            }
+        """)
+        self.total_price_label.setAlignment(Qt.AlignLeft)
+        self.total_price_label.setText(f"Total: {total_price:.2f}")
 
     def remove_from_cart(self, product: Product):
         self.controller.remove_product_from_cart(product, 1)

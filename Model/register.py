@@ -1,11 +1,13 @@
 from Model.cash_inventory import CashInventory
 from Model.cart import Cart
 from Model.product import Product
+from Model.product import ProductRepository
 from dataclasses import dataclass, field
 from typing import List, Tuple
 from datetime import datetime
 import json 
 import os
+
 
 TRANSACTION_FILE = 'transactions.json'
 
@@ -33,11 +35,12 @@ class Receipt:
         return Receipt(products=products, total=data["total"], paid=data["paid"], change=data["change"], timestamp=timestamp)
 
 class RegisterController:
-    def __init__(self):
+    def __init__(self,productRepository:ProductRepository):
         self.cart = Cart()
         self.receipts: List[Receipt] = []
         self.cash_inventory = CashInventory()
-        self.load_receipts()
+        self.load_receipts()  
+        self.productRepo = productRepository
 
     def load_receipts(self):
         if os.path.exists(TRANSACTION_FILE):

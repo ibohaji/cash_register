@@ -1,20 +1,43 @@
-/* Add your styles here for the main window */
-#cash-inventory {
-    font-size: 14px;
+/* Main window styling */
+#main-window {
+    background-color: #F8F8F8;
+}
+
+#header {
+    font-size: 24px;
+    font-weight: bold;
     color: #333;
-    margin-top: 10px;
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* Cart view */
+#cart-container {
+    background-color: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+QLabel {
+    font-size: 16px;
+    color: #333;
+}
+
+QListWidget {
+    background-color: #FAFAFA;
+    border: none;
 }
 
 QPushButton {
-    background-color: #d3d3d3;
+    background-color: #E3F2FD; /* Light Blue for default actions */
     color: #333;
-    padding: 10px 20px;
+    padding: 10px;
     font-size: 16px;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
 }
 
 QPushButton:hover {
-    background-color: #c0c0c0;
+    background-color: #B3E5FC;
 }

@@ -10,16 +10,15 @@ QLineEdit {
 }
 
 QPushButton {
-    background-color: #d3d3d3;
+    background-color: #E8F5E9; /* Light Green for buttons */
     color: #333;
     padding: 10px 20px;
     font-size: 16px;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
     margin-top: 20px;
 }
 
 QPushButton:hover {
-    background-color: #c0c0c0;
+    background-color: #C8E6C9;
 }
